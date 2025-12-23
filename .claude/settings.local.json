@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install expo-crypto react-native-reanimated)",
+      "Bash(cat:*)",
+      "Bash(npm install:*)",
+      "Bash(wc:*)",
+      "Bash(source:*)",
+      "Bash(nvm use:*)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}

@@ -1,15 +1,13 @@
 import * as Contacts from 'expo-contacts';
 import { Alert } from 'react-native';
+import { ContactInfo, ContactResult } from '../types';
 
 /**
  * Service for contact-related operations using expo-contacts
  */
 
-export interface ContactInfo {
-  id: string;
-  name: string;
-  phoneNumbers: string[];
-}
+// Re-export for backward compatibility
+export type { ContactInfo };
 
 /**
  * Request contacts permission
@@ -40,11 +38,7 @@ export const checkContactsPermission = async (): Promise<boolean> => {
 /**
  * Get all contacts from device
  */
-export const getAllContacts = async (): Promise<{
-  success: boolean;
-  contacts: ContactInfo[];
-  error?: string;
-}> => {
+export const getAllContacts = async (): Promise<ContactResult> => {
   try {
     const hasPermission = await checkContactsPermission();
     if (!hasPermission) {

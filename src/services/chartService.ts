@@ -1,4 +1,4 @@
-import { Transaction } from '../types';
+import { Transaction, ChartDataItem } from '../types';
 import { CHART_COLORS } from '../constants';
 import { groupByMaterial } from './transactionService';
 
@@ -6,12 +6,8 @@ import { groupByMaterial } from './transactionService';
  * Service for chart data generation
  */
 
-export interface ChartDataItem {
-  name: string;
-  amount: number;
-  percentage: number;
-  color: string;
-}
+// Re-export for backward compatibility
+export type { ChartDataItem };
 
 /**
  * Generate pie chart data from transactions

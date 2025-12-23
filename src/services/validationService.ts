@@ -1,14 +1,12 @@
-import { Transaction } from '../types';
+import { Transaction, ValidationResult } from '../types';
 import { VALIDATION } from '../constants';
 
 /**
  * Service for validation operations
  */
 
-export interface ValidationResult {
-  valid: boolean;
-  errors: { [field: string]: string };
-}
+// Re-export for backward compatibility
+export type { ValidationResult };
 
 /**
  * Validate amount field

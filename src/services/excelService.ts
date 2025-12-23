@@ -1,21 +1,13 @@
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as XLSX from 'xlsx';
-import { Transaction } from '../types';
-import { ExcelExportResult, MonthlyTotals } from '../types/interfaces';
+import { Transaction, ExcelExportResult, MonthlyTotals, MaterialBreakdownItem } from '../types';
 import { COLORS } from '../constants';
 import { format } from 'date-fns';
 
 /**
  * Service for Excel report generation and export
  */
-
-interface MaterialBreakdown {
-  material: string;
-  amount: number;
-  percentage: number;
-  count: number;
-}
 
 /**
  * Calculate monthly totals from transactions
@@ -52,7 +44,7 @@ const calculateMonthlyTotals = (transactions: Transaction[]): MonthlyTotals => {
  */
 const calculateMaterialBreakdown = (
   transactions: Transaction[]
-): MaterialBreakdown[] => {
+): MaterialBreakdownItem[] => {
   const materialMap = new Map<string, { amount: number; count: number }>();
 
   // Only include outgoing transactions for material breakdown
@@ -118,7 +110,7 @@ const createSummarySheet = (
  * Create Material Breakdown sheet
  */
 const createMaterialBreakdownSheet = (
-  breakdown: MaterialBreakdown[]
+  breakdown: MaterialBreakdownItem[]
 ): XLSX.WorkSheet => {
   const headers = [['Material', 'Amount', 'Percentage', 'Transaction Count']];
 
