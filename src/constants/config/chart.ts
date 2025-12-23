@@ -1,0 +1,13 @@
+/**
+ * Chart Configuration Constants
+ */
+
+export const CHART_CONFIG = {
+  PIE_SIZE: 240,
+  PIE_STROKE_WIDTH: 2,
+  PIE_INNER_RADIUS_RATIO: 0.55,
+  PIE_SELECTED_OFFSET: 8,
+  ANIMATION_DURATION: 300,
+  LEGEND_FONT_SIZE: 12,
+  LABEL_FONT_SIZE: 14,
+} as const;

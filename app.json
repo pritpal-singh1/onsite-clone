@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Construction Payment Manager",
+    "slug": "construction-payment-manager",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#2196F3"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.construction.paymentmanager",
+      "infoPlist": {
+        "NSContactsUsageDescription": "This app needs access to your contacts to select party names for transactions.",
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.construction.paymentmanager",
+      "permissions": [
+        "READ_CONTACTS",
+        "WRITE_CONTACTS"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#2196F3"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ba39174b-d303-4659-a826-81ef2e7827fa"
+      }
+    }
+  }
+}
